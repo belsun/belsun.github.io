@@ -41,43 +41,53 @@
   "institutions": [
     {
       "mark": "THU",
-      "label": "Tsinghua University"
+      "label": "Tsinghua University",
+      "logo": "./assets/logos/tsinghua.svg"
     },
     {
       "mark": "ARCH",
-      "label": "Tsinghua Architecture"
+      "label": "Tsinghua Architecture",
+      "logo": "./assets/logos/tsinghua-architecture.png"
     },
     {
       "mark": "AUTO",
-      "label": "Tsinghua Automation"
+      "label": "Tsinghua Automation",
+      "logo": "./assets/logos/tsinghua-automation.png"
     },
     {
       "mark": "IIIS",
-      "label": "Tsinghua IIIS"
+      "label": "Tsinghua IIIS",
+      "logo": "./assets/logos/tsinghua-iiis.png"
     },
     {
       "mark": "CU",
-      "label": "Columbia University"
+      "label": "Columbia University",
+      "logo": "./assets/logos/columbia.svg"
     },
     {
       "mark": "SEAS",
-      "label": "Columbia Engineering"
+      "label": "Columbia Engineering",
+      "logo": "./assets/logos/columbia.svg"
     },
     {
       "mark": "LH",
-      "label": "NetEase Leihuo"
+      "label": "NetEase Leihuo",
+      "logo": "./assets/logos/netease-leihuo.svg"
     },
     {
       "mark": "AWS",
-      "label": "Developer Program"
+      "label": "AWS Developer Program",
+      "logo": "./assets/logos/aws.svg"
     },
     {
       "mark": "GIO",
-      "label": "Google I/O Cloud"
+      "label": "Google I/O Cloud",
+      "logo": "./assets/logos/google-io.svg"
     },
     {
       "mark": "UNICEF",
-      "label": "UNICEF"
+      "label": "UNICEF",
+      "logo": "./assets/logos/unicef.svg"
     }
   ]
 }

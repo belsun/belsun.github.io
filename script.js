@@ -725,13 +725,18 @@ function renderInstitutionStrip() {
   if (!institutionStrip || !Array.isArray(profileContent?.institutions)) return;
 
   institutionStrip.innerHTML = profileContent.institutions
-    .map(
-      (item) => `
-        <span>
-          <strong>${escapeHtml(item.mark || "")}</strong>
-          <em>${escapeHtml(item.label || "")}</em>
-        </span>`,
-    )
+    .map((item) => {
+      const label = escapeHtml(item.label || "");
+      const logo = item.logo
+        ? `<span class="institution-logo"><img src="${escapeHtml(item.logo)}" alt="" loading="lazy"></span>`
+        : `<strong>${escapeHtml(item.mark || "")}</strong>`;
+
+      return `
+        <span title="${label}">
+          ${logo}
+          <em>${label}</em>
+        </span>`;
+    })
     .join("");
 }
 

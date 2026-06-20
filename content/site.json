@@ -1,0 +1,16 @@
+{
+  "siteName": "Wai Ka Sun — Neural Interfaces, Embodied AI, Robotics",
+  "shortName": "Wai Ka Sun",
+  "publicUrl": "https://waikasun.dora.run/",
+  "description": "Wai Ka Sun is an AI, BCI, robotics, and spatial intelligence builder working toward neural interfaces that turn human intent into physical action.",
+  "cv": {
+    "file": "./assets/cv/Wai-Ka-Sun-CV-latest.pdf",
+    "version": "2026-06-15",
+    "label": "Latest CV · updated 2026-06-15"
+  },
+  "cta": {
+    "research": "Research collaboration",
+    "work": "Robotics / AI opportunities",
+    "venture": "Build with me"
+  }
+}

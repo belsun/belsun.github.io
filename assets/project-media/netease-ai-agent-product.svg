@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="NetEase Fuxi Leihuo AI NPC productization map">
+  <defs>
+    <radialGradient id="bg" cx="62%" cy="46%" r="78%">
+      <stop offset="0" stop-color="#25203a"/>
+      <stop offset=".54" stop-color="#0c111c"/>
+      <stop offset="1" stop-color="#05070d"/>
+    </radialGradient>
+    <linearGradient id="card" x1="0" x2="1">
+      <stop offset="0" stop-color="#101927"/>
+      <stop offset="1" stop-color="#111421"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#a7d9f2"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g fill="none" stroke="#9ab1c2" stroke-opacity=".16">
+    <path d="M120 250 H1480M120 450 H1480M120 650 H1480"/>
+    <path d="M315 130 V760M610 130 V760M905 130 V760M1200 130 V760"/>
+  </g>
+  <text x="105" y="118" fill="#f7f2e9" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700">NetEase Fuxi / Leihuo</text>
+  <text x="108" y="168" fill="#a8bbca" font-family="Arial, Helvetica, sans-serif" font-size="24">In-game AI agent landing / AI NPC / enterprise product module</text>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <g transform="translate(105 278)">
+      <rect width="300" height="270" rx="20" fill="url(#card)" stroke="#415568"/>
+      <text x="30" y="62" fill="#ff6fb0" font-size="22" font-weight="700">GAME SCENE</text>
+      <text x="30" y="115" fill="#f7f2e9" font-size="36" font-weight="700">AI NPC</text>
+      <text x="30" y="162" fill="#b8c6d2" font-size="23">player-facing</text>
+      <text x="30" y="200" fill="#b8c6d2" font-size="23">dialogue + behavior</text>
+      <text x="30" y="238" fill="#b8c6d2" font-size="23">in-game constraints</text>
+    </g>
+    <g transform="translate(462 278)">
+      <rect width="300" height="270" rx="20" fill="url(#card)" stroke="#415568"/>
+      <text x="30" y="62" fill="#ff6fb0" font-size="22" font-weight="700">VIRTUAL HUMAN</text>
+      <text x="30" y="115" fill="#f7f2e9" font-size="34" font-weight="700">production</text>
+      <text x="30" y="162" fill="#b8c6d2" font-size="23">avatar pipeline</text>
+      <text x="30" y="200" fill="#b8c6d2" font-size="23">expression logic</text>
+      <text x="30" y="238" fill="#b8c6d2" font-size="23">character delivery</text>
+    </g>
+    <g transform="translate(819 278)">
+      <rect width="300" height="270" rx="20" fill="url(#card)" stroke="#415568"/>
+      <text x="30" y="62" fill="#ff6fb0" font-size="22" font-weight="700">LLM ALGORITHM</text>
+      <text x="30" y="115" fill="#f7f2e9" font-size="34" font-weight="700">agent brain</text>
+      <text x="30" y="162" fill="#b8c6d2" font-size="23">capability tests</text>
+      <text x="30" y="200" fill="#b8c6d2" font-size="23">corpus feedback</text>
+      <text x="30" y="238" fill="#b8c6d2" font-size="23">robustness loop</text>
+    </g>
+    <g transform="translate(1176 278)">
+      <rect width="300" height="270" rx="20" fill="#162130" stroke="#9cc3df"/>
+      <text x="30" y="62" fill="#b7dbf4" font-size="22" font-weight="700">AI PRODUCT</text>
+      <text x="30" y="115" fill="#f7f2e9" font-size="34" font-weight="700">enterprise module</text>
+      <text x="30" y="162" fill="#b8c6d2" font-size="23">feature ownership</text>
+      <text x="30" y="200" fill="#b8c6d2" font-size="23">cross-team landing</text>
+      <text x="30" y="238" fill="#b8c6d2" font-size="23">production constraints</text>
+    </g>
+    <rect x="430" y="660" width="740" height="74" rx="16" fill="#111826" stroke="#344b62"/>
+    <text x="466" y="706" fill="#f7f2e9" font-size="24" font-weight="700">Youngest team member, responsible for one enterprise-level project module</text>
+  </g>
+  <g stroke="#a7d9f2" stroke-width="4" fill="none" marker-end="url(#arrow)">
+    <path d="M415 413 H452"/>
+    <path d="M772 413 H809"/>
+    <path d="M1129 413 H1166"/>
+  </g>
+</svg>

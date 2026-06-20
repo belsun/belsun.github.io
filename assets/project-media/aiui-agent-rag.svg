@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="AIUI spatio-temporal RAG agent architecture">
+  <rect width="1600" height="900" fill="#05070d"/>
+  <radialGradient id="g" cx="62%" cy="40%" r="60%">
+    <stop offset="0" stop-color="#263a52"/>
+    <stop offset="1" stop-color="#05070d"/>
+  </radialGradient>
+  <rect width="1600" height="900" fill="url(#g)" opacity=".72"/>
+  <text x="110" y="120" fill="#f7f2e9" font-family="Arial, Helvetica, sans-serif" font-size="60" font-weight="700">AIUI</text>
+  <text x="112" y="170" fill="#a9bed0" font-family="Arial, Helvetica, sans-serif" font-size="24">Long-term dialogue / spatio-temporal RAG / intent-driven agents</text>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <circle cx="785" cy="450" r="120" fill="#101724" stroke="#b7dbf4" stroke-width="3"/>
+    <text x="724" y="438" fill="#f7f2e9" font-size="31" font-weight="700">LLM</text>
+    <text x="690" y="480" fill="#a9bed0" font-size="23">agent core</text>
+    <g fill="#111925" stroke="#43576d">
+      <rect x="145" y="330" width="310" height="160" rx="18"/>
+      <rect x="1145" y="330" width="310" height="160" rx="18"/>
+      <rect x="615" y="665" width="340" height="130" rx="18"/>
+      <rect x="615" y="105" width="340" height="130" rx="18"/>
+    </g>
+    <text x="185" y="392" fill="#ff6fb0" font-size="22" font-weight="700">USER INTENT</text>
+    <text x="185" y="436" fill="#f7f2e9" font-size="28">dialogue + action need</text>
+    <text x="1185" y="392" fill="#ff6fb0" font-size="22" font-weight="700">ACTION SURFACE</text>
+    <text x="1185" y="436" fill="#f7f2e9" font-size="28">beyond traditional GUI</text>
+    <text x="655" y="162" fill="#ff6fb0" font-size="22" font-weight="700">RAG MEMORY</text>
+    <text x="655" y="204" fill="#f7f2e9" font-size="28">spatio-temporal context</text>
+    <text x="655" y="722" fill="#ff6fb0" font-size="22" font-weight="700">FEEDBACK LOOP</text>
+    <text x="655" y="764" fill="#f7f2e9" font-size="28">reduce cognitive errors</text>
+  </g>
+  <g stroke="#9cc3df" stroke-width="4" fill="none" marker-end="url(#arrow)">
+    <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#9cc3df"/></marker></defs>
+    <path d="M460 410 C565 410 600 430 660 445"/>
+    <path d="M905 445 C995 425 1040 410 1140 410"/>
+    <path d="M785 238 V318"/>
+    <path d="M785 570 V660"/>
+  </g>
+</svg>

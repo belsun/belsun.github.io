@@ -1,0 +1,601 @@
+[
+  {
+    "id": "mindbridge",
+    "slug": "mindbridge",
+    "title": "MindBridge",
+    "subtitle": "AI-enhanced multi-output BCI writing and interaction system",
+    "prototype": "brain",
+    "domain": "BCI / LLM / Interaction",
+    "role": "Project Lead; advisors: Prof. Gao Xiaorong and Prof. Liu Yunhao",
+    "period": "Apr 2024 — Present",
+    "oneLiner": "A non-invasive Brain-AI interface that turns EEG-derived intent into writing, interaction, and multi-device control commands.",
+    "whyItMatters": "MindBridge explores a future daily-use interface for people whose intent should be able to reach tools, homes, robots, and assistive devices without depending on phone screens.",
+    "built": [
+      "AI-enhanced BCI interaction architecture for writing, cursor control, and hardware command output",
+      "SSVEP + motor-imagery interaction logic with EEG/EMG sensing, intent decoding, and multimodal feedback",
+      "Early BCI-to-3-DoF robotic arm control path and microstate classification feasibility test"
+    ],
+    "architecture": [
+      "EEG/EMG sensing layer",
+      "Signal preprocessing and microstate decoding",
+      "AI decision layer for intent interpretation",
+      "LLM command planning for multi-device control",
+      "ROS / Modbus / hardware execution layer",
+      "Feedback confirmation loop"
+    ],
+    "impact": [
+      "Selected as one of the first batches of disruptive innovation talent training programs at Tsinghua University.",
+      "Secured 6-figure pre-seed funding.",
+      "Evaluated anonymously by academicians according to the latest CV.",
+      "Built a public-safe Python scaffold for EEG-to-command experiments.",
+      "Validated early microstate classification feasibility with a 65% binary-classification result in the defense materials.",
+      "Planned one invention patent around EEG-LLM collaborative control methods."
+    ],
+    "stack": [
+      "Python",
+      "FBCSP",
+      "EEG",
+      "SSVEP",
+      "Motor Imagery",
+      "LLM",
+      "ROS / Modbus"
+    ],
+    "status": "active",
+    "visibility": "shareable",
+    "audiences": [
+      "research",
+      "venture"
+    ],
+    "thumbnail": "./assets/project-media/mindbridge-architecture-07.jpg",
+    "gallery": [
+      "./assets/project-media/mindbridge-roadmap-10.jpg",
+      "./assets/project-media/mindbridge-outcomes-13.jpg"
+    ],
+    "links": {
+      "paper": "",
+      "demo": "",
+      "github": ""
+    },
+    "sections": {
+      "problem": "Most assistive and interactive systems still require visible screens, hands, or rigid command interfaces. MindBridge asks whether neural signals, AI reasoning, and hardware protocols can become one intent-to-action loop.",
+      "approach": "The system separates sensing, decoding, reasoning, and actuation: brain/body signals are classified into intent states with pipelines such as FBCSP for motor imagery, an AI layer maps the state into an actionable goal, and a command layer translates the goal into robot, home, or assistive-device instructions.",
+      "learning": "The next research challenge is reliability: expanding microstate dimensions, improving decoding accuracy, and testing whether mixed EEG/EMG + LLM planning can safely control robots, homes, and exoskeletons."
+    },
+    "next": "Refine neural classification reliability and test more embodied command loops."
+  },
+  {
+    "id": "unitree-g1-humanoid-control",
+    "slug": "unitree-g1-control",
+    "title": "Interpretable & Robust Humanoid Control",
+    "subtitle": "Neural Circuit Policies for Unitree G1 control",
+    "prototype": "hand",
+    "domain": "Robotics / Control",
+    "role": "Independent Researcher; advisor: Prof. Mengdi Xu",
+    "period": "Sept 2025 — Jan 2026",
+    "oneLiner": "A humanoid-control research pipeline using CfC-based Neural Circuit Policies and PPO to make locomotion more interpretable, parameter-efficient, and robust under sensor noise.",
+    "whyItMatters": "Humanoid robots are high-risk multi-DoF systems. Control policies should be trusted not only for reward, but for robustness, transparency, and transfer into noisy embodied settings.",
+    "built": [
+      "Modified CleanRL continuous-action PPO pipeline for CfC-based policy training",
+      "Verified CfC learning capability on MuJoCo Humanoid-v4 before scaling toward Isaac Sim Unitree G1",
+      "Framed a two-phase strategy: 17-DoF benchmark validation, then 29-DoF Unitree G1 sim-to-real control",
+      "Mapped AMASS motion data to a 29-DoF Unitree G1 humanoid in Isaac Sim",
+      "Modified URDF to add 3-DoF torso articulation for pitch, roll, and yaw tracking"
+    ],
+    "architecture": [
+      "MuJoCo Humanoid-v4 benchmark",
+      "CfC / Neural Circuit Policy backbone",
+      "Proximal Policy Optimization training",
+      "MLP baseline comparison",
+      "Gaussian sensor-noise simulation",
+      "Isaac Sim Unitree G1 scale-up plan",
+      "AMASS retargeting and URDF articulation"
+    ],
+    "impact": [
+      "Verified CfC-based PPO on humanoid benchmarks.",
+      "Reached functional locomotion with about 119k parameters versus a 329k-parameter MLP baseline, around 52% fewer parameters.",
+      "Observed more natural rhythmic gait behavior than the MLP baseline in the course presentation.",
+      "Built a sim-to-real motion-tracking pipeline for trunk rotations and rhythmic nonlinear movements.",
+      "Defined future work around Gaussian sensor-noise testing, PCA visualization of CfC hidden states, and real-time user steering."
+    ],
+    "stack": [
+      "CfC",
+      "NCP",
+      "PPO",
+      "MuJoCo",
+      "Isaac Sim",
+      "Unitree G1",
+      "AMASS",
+      "URDF"
+    ],
+    "status": "in progress",
+    "visibility": "partial",
+    "audiences": [
+      "research",
+      "jobs"
+    ],
+    "thumbnail": "./assets/project-media/unitree-training-10.jpg",
+    "gallery": [
+      "./assets/project-media/unitree-gait-11.jpg",
+      "./assets/project-media/unitree-conclusion-14.jpg"
+    ],
+    "sections": {
+      "problem": "Standard deep reinforcement learning policies can learn strong locomotion rewards, but they are often black boxes, brittle under sensor noise, and unsafe to trust directly on high-DoF humanoids.",
+      "approach": "The project uses a sparse recurrent Neural Circuit Policy with a Closed-form Continuous-time backbone, trained through PPO. The research path first validates CfC on humanoid benchmarks, then scales the method toward Isaac Sim Unitree G1.",
+      "learning": "Trustworthy physical AI should prioritize robustness and transparency over raw reward alone. The next step is deeper noise quantification, hidden-state visualization, and user-steered embodied control."
+    },
+    "next": "Continue robustness tests and prepare sim-to-real evaluation notes."
+  },
+  {
+    "id": "architectural-schematics-ai",
+    "slug": "architectural-schematics-ai",
+    "title": "OpenSketch Architectural Intelligence",
+    "subtitle": "KG-MSA framework for professional architectural drawing interpretation",
+    "prototype": "chip",
+    "domain": "AI / Architecture / Spatial Intelligence",
+    "role": "Thesis Researcher / Prototype Developer",
+    "period": "Jan 2026 — Jun 2026",
+    "oneLiner": "A completed Tsinghua graduation thesis prototype that uses Knowledge-Guided Multimodal Semantic Alignment to parse professional architectural schematics into structured spatial meaning.",
+    "whyItMatters": "Most multimodal models can see lines and labels, but they often miss architectural intent, tectonic logic, spatial organization, and professional terminology. OpenSketch turns drawing interpretation into a structured, searchable, and reviewable intelligence workflow.",
+    "built": [
+      "OpenSketch V2.6 prototype for architectural drawing interpretation",
+      "Hot-pluggable architectural knowledge graph with drawing rules, Gestalt spatial logic, style terms, and negative constraints",
+      "ARCH-Code semantic encoding system for view type, geometry, style, and site context",
+      "LLM + BIM workflow bridge from traditional CAD/BIM modeling to AIGC-assisted conceptual design",
+      "Architectural Semantic Matching Score (ASMS) evaluation rubric"
+    ],
+    "architecture": [
+      "Drawing / image ingestion",
+      "Type recognition and visual denoising",
+      "Knowledge-Guided Multimodal Semantic Alignment",
+      "RAG knowledge patch retrieval",
+      "Structured JSON report and ARCH-Code output",
+      "Similar-case recommendation"
+    ],
+    "impact": [
+      "Completed as graduation thesis with full-GPA A.",
+      "Aligned AI outputs with professional design logic including spatial scales, tectonic logic, and drawing types.",
+      "Tested on six representative architectural drawings and images including plans, sections, elevations, site plans, concept images, and construction details.",
+      "Improved ASMS scores to 89.0 and 83.5 across two multimodal model bases in the thesis experiments.",
+      "Raised professional term overlap above 92% and ARCH-Code consistency to 100% in repeated-output stability tests.",
+      "Reduced hallucination and non-professional descriptions through RAG knowledge constraints and Gestalt spatial rules."
+    ],
+    "stack": [
+      "OpenSketch",
+      "KG-MSA",
+      "Multimodal AI",
+      "BIM",
+      "RAG",
+      "ARCH-Code",
+      "ASMS"
+    ],
+    "status": "completed",
+    "visibility": "partial",
+    "audiences": [
+      "research",
+      "jobs"
+    ],
+    "videoUrl": "https://youtu.be/1TR6h8t_8SM",
+    "thumbnail": "./assets/project-media/opensketch-video-thumb.jpg",
+    "gallery": [
+      "./assets/project-media/opensketch-kgmsa-map.svg",
+      "./assets/project-media/opensketch-asms-scorecard.svg",
+      "./assets/project-media/opensketch-archcode-stability.svg"
+    ],
+    "links": {
+      "paper": "",
+      "demo": "https://youtu.be/1TR6h8t_8SM",
+      "github": ""
+    },
+    "sections": {
+      "problem": "Architectural drawings are usually stored as images, vectors, or manually tagged files. General multimodal models can describe visible pixels, but often drift on drawing type, spatial topology, tectonic logic, and design vocabulary.",
+      "approach": "OpenSketch avoids expensive model retraining. Instead, it injects professional drawing conventions, Gestalt rules, terminology, and case knowledge at inference time, then converts output into ARCH-Code and structured reports for retrieval.",
+      "learning": "This project reframed architectural AI from image generation to spatial understanding: the model supplies visual-language reasoning, while the knowledge graph preserves disciplinary judgment and makes the output auditable."
+    },
+    "next": "Extend the prototype toward a larger architecture-school drawing library and future parameter-efficient fine-tuning."
+  },
+  {
+    "id": "skyeye",
+    "slug": "skyeye",
+    "title": "SkyEye",
+    "subtitle": "Quant and market-intelligence tool for HK / US investors",
+    "prototype": "chip",
+    "domain": "Quant Tools / Market Intelligence / AI Finance",
+    "role": "Founder / Full-stack Builder",
+    "period": "2026 — Present",
+    "oneLiner": "A news-to-price market intelligence tracker that connects market themes, company context, K-line reactions, sentiment, and paper-trading feedback.",
+    "whyItMatters": "Financial decisions are usually scattered across charts, news feeds, macro context, and memory. SkyEye compresses that into one learning loop for research and simulated trading.",
+    "built": [
+      "FastAPI + React market-intelligence platform for HK and US market learning",
+      "News-to-K-line workflow linking company news, sentiment, event categories, price reactions, and AI analysis next to candlestick charts",
+      "Opportunity Radar for catalysts, themes, IPOs, market events, and trade setups",
+      "Company and instrument profiles with filings, financial context, official links, and recent-news evidence",
+      "Dual-currency paper trading with separate HKD and USD simulated books",
+      "Bilingual UI modes and future multilingual architecture for international-market learning"
+    ],
+    "architecture": [
+      "React 18 + TypeScript + Vite frontend",
+      "D3 candlestick chart and Canvas news-particle layer",
+      "FastAPI backend with market, news, opportunity, event, analysis, prediction, and paper-trading routers",
+      "SQLite data layer with yfinance, Polygon API, and RSS feeds",
+      "Layer 0 / 1 / 2 news analysis pipeline for filtering, sentiment labeling, and deeper AI analysis",
+      "Quant lab with prediction, similar-day search, catalyst radar, and paper-performance review"
+    ],
+    "impact": [
+      "Published as a public GitHub project in 2026.",
+      "Built a research-first market loop: scan theme, open symbol, read evidence, inspect price reaction, simulate trade, review performance.",
+      "Supports equities, indices, crypto, and commodities with instrument-specific context instead of fake company profiles.",
+      "Includes Opportunity Radar, market themes, bilingual UI, paper trading, and quant-lab surfaces.",
+      "Designed for research and paper trading only, not live-order execution or financial advice."
+    ],
+    "stack": [
+      "FastAPI",
+      "React",
+      "TypeScript",
+      "D3",
+      "SQLite",
+      "AI Analysis",
+      "Quant Lab",
+      "Paper Trading"
+    ],
+    "status": "active",
+    "visibility": "shareable",
+    "audiences": [
+      "jobs",
+      "venture",
+      "research"
+    ],
+    "thumbnail": "./assets/project-media/skyeye-radar-dashboard.png",
+    "gallery": [
+      "./assets/project-media/skyeye-radar-dashboard.png",
+      "./assets/project-media/skyeye-news-kline.png",
+      "./assets/project-media/skyeye-company-macro.png",
+      "./assets/project-media/skyeye-paper-trading.png",
+      "./assets/project-media/skyeye-market-themes.png"
+    ],
+    "links": {
+      "github": "https://github.com/belsun/skyeye",
+      "demo": "",
+      "paper": ""
+    },
+    "sections": {
+      "problem": "Investors and learners often have to stitch together charts, news, filings, macro shocks, sentiment, and trade journals by hand. The result is fragmented research and weak feedback between a thesis and price movement.",
+      "approach": "SkyEye organizes the workflow around evidence: it pairs K-line movement with market news, company profiles, event timelines, Opportunity Radar signals, and paper-trading review so each market hypothesis can be inspected and learned from.",
+      "learning": "This project made productized quant thinking concrete: a useful tool needs data ingestion, market semantics, human-readable evidence, model-assisted analysis, and a conservative feedback loop that separates research from live trading."
+    },
+    "next": "Continue expanding market coverage, quant-lab evaluation, and sentiment-to-price reasoning."
+  },
+  {
+    "id": "polar-mimicry-environments",
+    "slug": "polar-mimicry-environments",
+    "title": "Visual Perception Mechanisms in Polar Mimicry Environments",
+    "subtitle": "EEG + Unreal Engine 5.4 + nSpace polar whiteout simulation",
+    "prototype": "brain",
+    "domain": "Neuroscience / XR / Extreme Environments",
+    "role": "Independent Researcher; advisor: Prof. Wang Hui",
+    "period": "Sept 2025 — Dec 2026",
+    "oneLiner": "An EEG + UE5.4 polar whiteout experiment that links visual monotony, glare, reaction time, and attention decay inside an immersive nSpace cabin.",
+    "whyItMatters": "Extreme environments expose how perception, fatigue, and missing spatial cues shape human decisions under uncertainty. This project studies how whiteout, monotony, and glare can be measured through behavior and neural signals.",
+    "built": [
+      "Unreal Engine 5.4 polar whiteout scene with randomized red-ball visual stimuli",
+      "nSpace P371 immersive projection-cabin experiment around a 4m x 4m five-wall visual field",
+      "Emotiv X 14-channel EEG pipeline with Python/MNE artifact removal, ICA, FFT, and band-power analysis",
+      "OSC / UDP bridge from Python to UE5 for synchronized reaction-time capture"
+    ],
+    "architecture": [
+      "Polar whiteout visual scene",
+      "15-node stimulus path with low- and high-monotony zones",
+      "EEG acquisition at 128Hz",
+      "Python processing and timestamp synchronization",
+      "UE5 trigger and reaction-time logging",
+      "Attention / glare / fatigue analysis"
+    ],
+    "impact": [
+      "Used Emotiv X 14-channel EEG data at 128Hz with baseline calibration.",
+      "Built an experiment for 15 subjects aged 22-28 in the slide materials.",
+      "Linked visual monotony to attention decay and reaction-time increase across 15 data nodes.",
+      "Identified glare intensity as a strong predictor of sudden reaction-time spikes in the presentation materials.",
+      "Proposed design interventions including mandatory rest nodes, high-saturation visual cues, alpha-wave fatigue alerts, and cognitive training."
+    ],
+    "stack": [
+      "EEG",
+      "Unreal Engine 5.4",
+      "nSpace",
+      "MNE",
+      "OSC",
+      "VR",
+      "Human Factors"
+    ],
+    "status": "completed",
+    "visibility": "partial",
+    "audiences": [
+      "research"
+    ],
+    "thumbnail": "./assets/project-media/polar-overview-1.jpg",
+    "gallery": [
+      "./assets/project-media/polar-pipeline-2.jpg",
+      "./assets/project-media/polar-analysis-7.jpg"
+    ],
+    "sections": {
+      "problem": "Polar whiteout reduces visual cues, creating perception deprivation, slower reactions, fatigue, and risky decision conditions for extreme-environment work.",
+      "approach": "The experiment combined a UE5.4 whiteout simulation, random visual targets, behavioral trigger response, and EEG monitoring. Timestamps aligned neural data with reaction-time events for later analysis.",
+      "learning": "The project connected spatial simulation with cognitive measurement: environmental monotony can be treated as an interface variable, not only a visual background."
+    },
+    "next": "Refine stimulus protocols and compare perception responses across environmental conditions."
+  },
+  {
+    "id": "babel-tower-challenge",
+    "slug": "babel-tower-challenge",
+    "title": "Babel Tower Challenge",
+    "subtitle": "Sim-to-real robotic control",
+    "prototype": "hand",
+    "domain": "Robotics / Reinforcement Learning",
+    "role": "Lead; advisor: Prof. Zhao Qianchuan",
+    "period": "Spring — Summer 2025",
+    "oneLiner": "Optimized control strategies for dynamic friction and gravity in a 5-DOF robotic arm stacking challenge.",
+    "whyItMatters": "Manipulation policies have to survive the messy gap between simulated dynamics and physical contact.",
+    "built": [
+      "Control policies for 5-DOF stacking",
+      "DAgger loop to correct covariate shift",
+      "Evaluation against baseline stacking performance"
+    ],
+    "architecture": [
+      "Simulation policy training",
+      "Dataset aggregation",
+      "Policy correction",
+      "Realistic friction and gravity testing"
+    ],
+    "impact": [
+      "Achieved 3x baseline performance in stacking tasks.",
+      "Implemented DAgger to correct covariate shifts in RL policies."
+    ],
+    "stack": [
+      "DAgger",
+      "RL",
+      "Sim-to-Real",
+      "Robotic Arm"
+    ],
+    "status": "completed",
+    "visibility": "shareable",
+    "audiences": [
+      "jobs",
+      "research"
+    ],
+    "thumbnail": "./assets/project-media/babel-control-flow.svg",
+    "next": "Extract lessons for general-purpose embodied policy design."
+  },
+  {
+    "id": "aiui",
+    "slug": "aiui",
+    "title": "AIUI",
+    "subtitle": "Future HCI architecture via long-term dialogue",
+    "prototype": "brain",
+    "domain": "AI / HCI / Agents",
+    "role": "Research Assistant; advisor: Prof. Gong Jiangtao",
+    "period": "Dec 2024 — Mar 2025",
+    "oneLiner": "A long-term dialogue and context architecture using RAG and multimodal agents to move HCI from traditional GUIs toward intent-driven conversation.",
+    "whyItMatters": "Future interfaces should feel less like isolated prompts and more like durable relationships with context and agency.",
+    "built": [
+      "Long-context dialogue logic",
+      "RAG context surfaces",
+      "Spatio-temporal context integration for multi-round agent dialogue",
+      "Interaction patterns for persistent AI assistants"
+    ],
+    "architecture": [
+      "User context",
+      "Memory retrieval",
+      "Spatio-temporal RAG",
+      "Dialogue policy",
+      "Action suggestion",
+      "Feedback loop"
+    ],
+    "impact": [
+      "Implemented a Retrieval Augmented Generation architecture to incorporate spatio-temporal context.",
+      "Reduced cognitive errors in multi-round agent dialogues according to the latest CV.",
+      "Developed a multimodal agent framework using LLMs to supersede traditional GUIs with intent-driven conversation."
+    ],
+    "stack": [
+      "LLM",
+      "RAG",
+      "Dialogue Systems",
+      "HCI"
+    ],
+    "status": "prototype",
+    "visibility": "partial",
+    "audiences": [
+      "research",
+      "venture"
+    ],
+    "thumbnail": "./assets/project-media/aiui-agent-rag.svg",
+    "sections": {
+      "problem": "Traditional GUI workflows force users to translate intent into menus, windows, and manual state management. AIUI explored how long-term dialogue could remember context and act with continuity.",
+      "approach": "The project used RAG to retrieve spatio-temporal context during multi-round conversations and connected the retrieved context to a multimodal agent framework.",
+      "learning": "Persistent AI interfaces need memory, grounding, and action boundaries. The useful unit is not one prompt, but an evolving relationship between user intent, environment state, and agent behavior."
+    },
+    "next": "Clarify product boundaries and test memory-driven interface patterns."
+  },
+  {
+    "id": "twinspace",
+    "slug": "twinspace",
+    "title": "TwinSpace",
+    "subtitle": "VR, digital twin, and interactive robotics environment",
+    "prototype": "chip",
+    "domain": "XR / Digital Twin / Spatial Computing",
+    "role": "Project Lead; advisor: Prof. Liu Yunhao",
+    "period": "Nov 2021 — Dec 2023",
+    "oneLiner": "An XR and digital twin exploration connecting gesture recognition, pose datasets, immersive spatial remodeling, and interactive robotics.",
+    "whyItMatters": "Digital twins become more useful when people can alter spatial systems through embodied gestures, robotic response, and live context.",
+    "built": [
+      "Gesture-recognition interaction experiments",
+      "Pose-data workflows",
+      "Immersive environment remodeling prototypes",
+      "VR + interactive robot demonstration workflow",
+      "Zero-threshold XR interaction system using gesture recognition and self-trained AIGC models"
+    ],
+    "architecture": [
+      "Sensing",
+      "Gesture recognition",
+      "Spatial scene state",
+      "Digital twin update",
+      "XR output",
+      "Robot / environment response"
+    ],
+    "impact": [
+      "Selected as the sole undergraduate project for the China National Innovation Annual Conference.",
+      "Built immersive systems around gesture recognition, pose datasets, and early AIGC workflows.",
+      "Constructed a CAVE-like immersive simulation and curated a large pose dataset.",
+      "Presented as part of the Pipedream x TwinSpace line of BCI, XR, and generative interaction work."
+    ],
+    "stack": [
+      "XR",
+      "Digital Twin",
+      "Gesture Recognition",
+      "Pose Data",
+      "Interactive Robotics"
+    ],
+    "status": "completed",
+    "visibility": "shareable",
+    "audiences": [
+      "research",
+      "jobs"
+    ],
+  "videoUrl": "https://www.youtube.com/watch?v=Tf-_BTh-yK4",
+    "embedVideo": false,
+    "thumbnail": "./assets/project-media/twinspace-video-thumb.jpg",
+    "gallery": [
+      "./assets/project-media/twinspace-video-thumb.jpg"
+    ],
+    "links": {
+      "paper": "",
+      "demo": "https://www.youtube.com/watch?v=Tf-_BTh-yK4",
+      "github": ""
+    },
+    "sections": {
+      "problem": "Most digital-twin systems are still operated through screens and dashboards. TwinSpace explored whether spatial environments can be remodeled through body motion, gestures, and embodied interaction.",
+      "approach": "The project combined XR scenes, pose and gesture inputs, spatial state updates, and robot/environment responses into an immersive interaction loop.",
+      "learning": "TwinSpace became an early bridge between architectural spatial thinking and the later direction of spatial intelligence, embodied AI, and interface-free control."
+    },
+    "next": "Connect spatial intelligence methods with current AI architecture work."
+  },
+  {
+    "id": "pipedream",
+    "slug": "pipedream",
+    "title": "Pipedream",
+    "subtitle": "BCI generative film and somatosensory game experiments",
+    "prototype": "brain",
+    "domain": "BCI / Generative Design",
+    "role": "Co-First Creator; advisors: Prof. Zhang Xin, Jiajian Min, and Anna Yu",
+    "period": "Feb 2023 — Apr 2024",
+    "oneLiner": "A brainwave interaction and generative design line connecting BCI-driven film, somatosensory games, and creative computation.",
+    "whyItMatters": "Creative systems can become more embodied when signals from attention, intent, and motion affect generation directly.",
+    "built": [
+      "Brainwave-interactive level branching prototypes",
+      "Digital twin somatosensory game experiments",
+      "Generative design workflows",
+      "Brain-AI film / interactive media exploration"
+    ],
+    "architecture": [
+      "Signal input",
+      "Interaction mapping",
+      "Generative design logic",
+      "Game / film output",
+      "Immersive feedback"
+    ],
+    "impact": [
+      "Connected brainwave interaction, somatosensory games, and generative design through Pipedream.",
+      "Featured in the CCTV documentary Focus on Innovation.",
+      "Awarded Annual Excellent Design Prize by Tsinghua School of Architecture.",
+      "Selected for the 16th National College Student Innovation and Entrepreneurship Annual Conference as a national innovation reform project from Tsinghua.",
+      "Won Tsinghua Challenge Cup second prize and Best Newcomer Award.",
+      "Invited for CCTV documentary recording and interview.",
+      "Exhibited at IABR in the Netherlands as first author."
+    ],
+    "stack": [
+      "BCI",
+      "Generative Design",
+      "Creative Computation",
+      "Somatosensory Game"
+    ],
+    "status": "completed",
+    "visibility": "shareable",
+    "audiences": [
+      "research"
+    ],
+    "videoUrl": "https://www.youtube.com/watch?v=iYbBixluco4",
+    "thumbnail": "./assets/project-media/pipedream-film-thumb.jpg",
+    "gallery": [
+      "./assets/project-media/pipedream-film-thumb.jpg",
+      "./assets/project-media/pipedream-game-thumb.jpg"
+    ],
+    "links": {
+      "paper": "",
+      "demo": "https://www.youtube.com/watch?v=iYbBixluco4",
+      "github": "",
+      "extra": [
+        {
+          "label": "Game demo",
+          "url": "https://www.youtube.com/watch?v=xzWPJ1RDflA"
+        }
+      ]
+    },
+    "sections": {
+      "problem": "Traditional creative tools require explicit manual control. Pipedream asked whether brainwave interaction, movement, and generative systems could make creative media respond to embodied state.",
+      "approach": "The project connected signal input, interaction mapping, generative media logic, and immersive feedback across film and game prototypes.",
+      "learning": "This work helped clarify the interface direction behind MindBridge: neural and body signals should not be decorative; they can become the first layer of an intent-driven creative system."
+    },
+    "next": "Revisit the interaction grammar with stronger neural-interface tooling."
+  },
+  {
+    "id": "netease-fuxi-ai-lab",
+    "slug": "netease-fuxi-ai-lab",
+    "title": "NetEase Fuxi AI Lab",
+    "subtitle": "In-game AI agent and AI NPC productization",
+    "prototype": "chip",
+    "domain": "Game AI / AI NPC / Applied Agents",
+    "role": "AI Product Development Intern; in-game AI agent module owner",
+    "period": "July 2023 — Nov 2023",
+    "oneLiner": "Applied AI product work on landing intelligent agents and AI NPC behavior inside games at NetEase Fuxi / Leihuo.",
+    "whyItMatters": "Game worlds are one of the hardest proving grounds for embodied AI products: agents must talk, perceive, remember, coordinate with production systems, and still feel alive to real players.",
+    "built": [
+      "Owned a module of an enterprise-level in-game AI agent project as the youngest member of the group",
+      "Supported AI NPC productization across virtual-human, large-model algorithm, and AI product teams",
+      "Translated game interaction needs into agent behavior, dialogue, perception, and evaluation requirements",
+      "Constructed corpora and test sets to support model iteration and product validation",
+      "Tracked feature robustness, user interaction depth, and in-game landing constraints"
+    ],
+    "architecture": [
+      "Game-scene requirement analysis",
+      "AI NPC behavior design",
+      "Virtual-human production interface",
+      "LLM algorithm capability evaluation",
+      "AI product rollout loop",
+      "Robustness and player-interaction feedback"
+    ],
+    "impact": [
+      "Worked on AI agent applications and landing inside game environments from July to November 2023.",
+      "Coordinated with virtual-human, large-model algorithm, and AI product groups.",
+      "Served as the youngest member in the team while taking responsibility for one module of an enterprise-level project.",
+      "Built evaluation and product feedback materials for model and feature iteration.",
+      "Strengthened understanding of what it takes to move agents from demos into production systems."
+    ],
+    "stack": [
+      "Game AI",
+      "AI NPC",
+      "LLM Agents",
+      "Virtual Humans",
+      "AI Product",
+      "Feature Evaluation"
+    ],
+    "status": "completed",
+    "visibility": "partial",
+    "audiences": [
+      "jobs"
+    ],
+    "thumbnail": "./assets/project-media/netease-ai-agent-product.svg",
+    "sections": {
+      "problem": "AI NPCs are not only dialogue demos. In production games, they have to connect model capability, virtual-human pipelines, interaction design, product goals, and reliability constraints.",
+      "approach": "The work sat between virtual-human production, large-model algorithm capability, and AI product planning. I helped translate in-game agent needs into behavior modules, evaluation materials, and landing constraints that could be used by different teams.",
+      "learning": "This internship made agent productization concrete: a useful AI character needs model intelligence, but also product ownership, scene constraints, evaluation loops, and cross-team coordination."
+    },
+    "next": "Translate applied product lessons into future neural-interface product strategy."
+  }
+]

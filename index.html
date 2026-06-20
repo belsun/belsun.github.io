@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wai Ka Sun — Neural Interfaces, Embodied AI, Robotics</title>
+    <meta
+      name="description"
+      content="Wai Ka Sun is an AI, BCI, robotics, and spatial intelligence builder working toward neural interfaces that turn human intent into physical action."
+    />
+    <link rel="canonical" href="https://waikasun.dora.run/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Wai Ka Sun — Neural Interfaces, Embodied AI, Robotics" />
+    <meta property="og:description" content="AI, BCI, robotics, and spatial intelligence builder working toward neural interfaces that turn human intent into physical action." />
+    <meta property="og:image" content="https://waikasun.dora.run/assets/og/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Wai Ka Sun",
+        "alternateName": ["Bella Sun", "Wai Ka (Bella) Sun", "Sun Wai Ka"],
+        "url": "https://waikasun.dora.run/",
+        "email": "mailto:sunwaikalithy@gmail.com",
+        "affiliation": [
+          { "@type": "CollegeOrUniversity", "name": "Columbia University" },
+          { "@type": "CollegeOrUniversity", "name": "Tsinghua University" }
+        ],
+        "knowsAbout": [
+          "Brain-Computer Interfaces",
+          "Embodied AI",
+          "Robot Learning",
+          "Humanoid Robotics",
+          "Spatial Intelligence",
+          "Human-Computer Interaction"
+        ],
+        "sameAs": ["https://www.linkedin.com/in/bella-sun-48448038b/"]
+      }
+    </script>
+  </head>
+  <body data-tone="dark">
+    <canvas class="particle-field" id="particleField" aria-hidden="true"></canvas>
+    <div class="system-labels" aria-hidden="true">
+      <span class="system-label label-nw" data-i18n="system.neural">neural signal / eeg</span>
+      <span class="system-label label-ne" data-i18n="system.orbital">spatial compute / world model</span>
+      <span class="system-label label-sw" data-i18n="system.intent">intent model / llm agent</span>
+      <span class="system-label label-se" data-i18n="system.embodied">embodied control / humanoid</span>
+    </div>
+
+    <header class="site-header compact-header">
+      <a class="brand" href="#top" aria-label="Wai Ka Sun home">
+        <span class="brand-mark">shero</span>
+        <span class="brand-name">Wai Ka Sun</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation" data-i18n-aria="nav.aria">
+        <a href="#work-research">Work / Research</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <a class="nav-cv" href="./assets/cv/Wai-Ka-Sun-CV-latest.pdf" download data-cv-link data-i18n="nav.cv">CV</a>
+      </nav>
+      <div class="header-controls" aria-label="Site controls">
+        <button class="sound-toggle" type="button" id="soundToggle" aria-label="Enable sound" data-i18n-aria="sound.aria">
+          <span class="tone-dot" aria-hidden="true"></span>
+          <span id="soundLabel" data-i18n="sound.enable">Enable sound</span>
+        </button>
+        <label class="language-switcher">
+          <span data-i18n="language.label">LANG</span>
+          <select id="languageSelect" aria-label="Select language" data-i18n-aria="language.aria">
+            <option value="en">English</option>
+            <option value="zh-CN">简体中文</option>
+            <option value="zh-HK">繁體中文</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+          </select>
+        </label>
+        <label class="palette-switcher">
+          <span data-i18n="palette.label">PALETTE</span>
+          <select id="paletteSelect" aria-label="Select color palette" data-i18n-aria="palette.aria">
+            <option value="pink" data-i18n="palette.pink">Black Pink</option>
+            <option value="blue" data-i18n="palette.blue">Black Blue</option>
+            <option value="mono" data-i18n="palette.mono">Black White</option>
+            <option value="purple" data-i18n="palette.purple">Black Purple</option>
+          </select>
+        </label>
+        <button class="tone-toggle" type="button" id="toneToggle" aria-label="Switch color tone" data-i18n-aria="tone.aria">
+          <span class="tone-dot" aria-hidden="true"></span>
+          <span id="toneLabel" data-i18n="tone.dark">Dark</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="shero-stage" aria-labelledby="shero-title">
+        <div class="shero-copy">
+          <p class="eyebrow" data-i18n="hero.eyebrow">BCI / AI / Robotics / Spatial Intelligence</p>
+          <div class="kinetic-title" id="kineticTitle">
+            <h1 class="hero-name" id="shero-title">
+              <span>Wai Ka Sun</span>
+            </h1>
+          </div>
+          <p class="shero-line" data-i18n="hero.line">I build neural interfaces that turn human intent into physical action.</p>
+          <p class="shero-text" data-i18n="hero.text">
+            Incoming Columbia MSAI Robotics Track student and Tsinghua-trained cross-disciplinary builder working across BCI, AI systems, robot learning, humanoid control, and spatial intelligence. Trained through architecture and computational design, I think in bodies, machines, and environments; the question behind my work is how systems can understand human intent and turn it into real, usable, elegant action without phone screens as the default interface.
+          </p>
+          <p class="zh-line" lang="zh-Hans" data-i18n="hero.tagline">把人的意图变成机器与环境的行动。</p>
+          <div class="domain-strip" aria-label="Core domains" data-i18n-aria="domains.aria">
+            <span data-i18n="domains.bci">BCI</span>
+            <span data-i18n="domains.embodied">AI</span>
+            <span data-i18n="domains.robotics">Robotics</span>
+            <span data-i18n="domains.space">Spatial Intelligence</span>
+          </div>
+          <div class="institution-strip" id="institutionStrip" aria-label="Schools, labs, and programs">
+            <span><strong>THU</strong><em>Tsinghua University</em></span>
+            <span><strong>ARCH</strong><em>School of Architecture</em></span>
+            <span><strong>AUTO</strong><em>Dept. of Automation</em></span>
+            <span><strong>IIIS</strong><em>Interdisciplinary Information Sciences</em></span>
+            <span><strong>CU</strong><em>Columbia University</em></span>
+            <span><strong>SEAS</strong><em>Columbia Engineering</em></span>
+            <span><strong>LH</strong><em>NetEase Leihuo</em></span>
+            <span><strong>AWS</strong><em>Developer Program</em></span>
+            <span><strong>GIO</strong><em>Google I/O Cloud</em></span>
+            <span><strong>UNICEF</strong><em>UNICEF</em></span>
+          </div>
+          <div class="shero-actions audience-actions" aria-label="Featured links" data-i18n-aria="actions.aria">
+            <a class="primary-link" href="mailto:sunwaikalithy@gmail.com?subject=Research%20collaboration%20with%20Wai%20Ka%20Sun" data-i18n="actions.research">Research collaboration</a>
+            <a class="secondary-link" href="mailto:sunwaikalithy@gmail.com?subject=Robotics%20AI%20opportunity%20for%20Wai%20Ka%20Sun" data-i18n="actions.work">Robotics / AI opportunities</a>
+            <a class="secondary-link" href="mailto:sunwaikalithy@gmail.com?subject=Venture%20conversation%20with%20Wai%20Ka%20Sun" data-i18n="actions.build">Build with me</a>
+          </div>
+          <div class="profile-links-panel hero-links-panel">
+            <span class="panel-label">Links</span>
+            <div class="platform-links" id="platformLinks">
+              <a href="mailto:sunwaikalithy@gmail.com">Email</a>
+              <a href="https://www.linkedin.com/in/bella-sun-48448038b/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+            <div class="profile-panel-actions">
+              <a class="panel-cv-link" href="./assets/cv/Wai-Ka-Sun-CV-latest.pdf" download data-cv-link>Latest CV</a>
+            </div>
+          </div>
+          <div class="mobile-dossier" aria-label="Mobile profile summary" data-i18n-aria="mobile.aria">
+            <span data-i18n="mobile.bci">BCI + LLM</span>
+            <span data-i18n="mobile.humanoid">Humanoid control</span>
+            <span data-i18n="mobile.xr">XR systems</span>
+            <span data-i18n="mobile.sailing">Sailing discipline</span>
+          </div>
+        </div>
+
+        <aside class="profile-panel" aria-label="Latest news">
+          <div class="profile-panel-block latest-panel">
+            <span class="panel-label">Latest</span>
+            <ul class="latest-news-list" id="latestNewsList">
+              <li><time>2026</time><span>Incoming Columbia MSAI Robotics Track student.</span></li>
+              <li><time>2024</time><span>MindBridge selected for Tsinghua disruptive innovation training.</span></li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section-band work-band work-research-section" id="work-research" aria-labelledby="work-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="section-kicker" data-i18n="work.kicker">Work / Research</p>
+            <h2 id="work-title" data-i18n="work.title">Evidence across neural interfaces, robot bodies, and spatial compute.</h2>
+          </div>
+          <div class="work-research-layout">
+            <div class="research-timeline" id="researchTimeline" aria-label="Project timeline">
+              <button class="timeline-item is-active" type="button" data-slug="mindbridge" data-prototype="brain">
+                <span class="timeline-year">2024-Present</span>
+                <strong>MindBridge</strong>
+                <em>BCI / LLM / EEG</em>
+              </button>
+            </div>
+            <div class="project-wall" id="projectWall" aria-live="polite">
+              <a class="project-tile size-wide is-active" href="./project.html?slug=mindbridge" data-slug="mindbridge" data-prototype="brain">
+                <img src="./assets/project-media/mindbridge-architecture-07.jpg" alt="MindBridge project visual" loading="lazy" />
+                <span class="project-tile-overlay">
+                  <span>BCI / LLM / Interaction</span>
+                  <strong>MindBridge</strong>
+                  <em>A non-invasive BCI + LLM system for translating neural intent into commands.</em>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-band build-band" id="research" aria-labelledby="research-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="section-kicker" data-i18n="build.kicker">Research System</p>
+            <h2 id="research-title" data-i18n="build.title">Four lenses, one operating system.</h2>
+          </div>
+          <div class="capability-grid">
+            <article data-prototype="brain">
+              <span>01</span>
+              <h3>AI & LLM</h3>
+              <p data-i18n="build.ai.text">RAG, agents, multimodal reasoning, product logic, and model-powered interfaces.</p>
+            </article>
+            <article data-prototype="brain">
+              <span>02</span>
+              <h3>BCI & Neuroscience</h3>
+              <p data-i18n="build.bci.text">EEG signal processing, FBCSP, motor imagery, SSVEP, and intent modeling.</p>
+            </article>
+            <article data-prototype="hand">
+              <span>03</span>
+              <h3>Robotics & Control</h3>
+              <p data-i18n="build.robotics.text">Sim-to-real transfer, reinforcement learning, humanoid motion, ROS, and Isaac Sim.</p>
+            </article>
+            <article data-prototype="chip">
+              <span>04</span>
+              <h3>Spatial Intelligence</h3>
+              <p data-i18n="build.art.text">Architecture, XR, computational design, digital twins, and spatial reasoning systems.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-band vision-band" id="vision" aria-labelledby="vision-title" data-prototype="chip">
+        <div class="section-inner vision-layout">
+          <div>
+            <p class="section-kicker" data-i18n="vision.kicker">Vision</p>
+            <h2 id="vision-title" data-i18n="vision.title">From neural signal to environmental control.</h2>
+            <p data-i18n="vision.text">
+              The phone made computation portable. The next interface should make computation ambient. I am working toward systems that infer intent from brain and body signals, reason through AI agents, and execute through robots, appliances, and spatial environments.
+            </p>
+          </div>
+          <div class="vision-steps" aria-label="Decode reason act pipeline">
+            <article><span>01</span><strong>Decode intent</strong><p>Brain, body, and context signals become usable intent models.</p></article>
+            <article><span>02</span><strong>Reason with context</strong><p>AI agents connect goals, constraints, memory, and environment state.</p></article>
+            <article><span>03</span><strong>Act through machines</strong><p>Robots, tools, homes, and spatial systems respond without phone screens as the default layer.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-band journey-band" id="journey" aria-labelledby="journey-title">
+        <div class="section-inner journey-layout">
+          <div class="section-heading sticky-heading">
+            <p class="section-kicker" data-i18n="journey.kicker">Journey</p>
+            <h2 id="journey-title" data-i18n="journey.title">A path through systems, bodies, and weather.</h2>
+            <p data-i18n="journey.text">The work keeps changing shape. The center stays the same: perception, intention, motion, and care.</p>
+          </div>
+          <div class="timeline">
+            <article data-prototype="chip"><span>2021 - 2023</span><h3 data-i18n="journey.xr.title">XR environments and digital twin interaction</h3><p data-i18n="journey.xr.text">Built immersive systems around gesture recognition, pose datasets, and early AIGC workflows.</p></article>
+            <article data-prototype="brain"><span>2023 - 2024</span><h3 data-i18n="journey.bci.title">BCI-driven generative design</h3><p data-i18n="journey.bci.text">Connected brainwave interaction, somatosensory games, and generative design through Pipedream.</p></article>
+            <article data-prototype="hand"><span>2024 - 2025</span><h3 data-i18n="journey.llm.title">LLM agents and robotic control</h3><p data-i18n="journey.llm.text">Worked on long-term dialogue systems, RAG context, robot-arm control, and sim-to-real learning.</p></article>
+            <article data-prototype="brain"><span>2025 - Now</span><h3 data-i18n="journey.now.title">Human intent and embodied intelligence</h3><p data-i18n="journey.now.text">Focusing on BCI + LLM interaction, humanoid control, and AI systems that understand spatial logic.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-band field-band" aria-labelledby="field-title" data-prototype="blackhole">
+        <div class="section-inner field-layout">
+          <p class="section-kicker" data-i18n="field.kicker">Beyond The Lab</p>
+          <h2 id="field-title" data-i18n="field.title">Sailing is also a way of reading systems.</h2>
+          <p data-i18n="field.text">I sail, travel, observe, and make things. Open water has trained my sense of timing, uncertainty, endurance, and trust in instruments. Those instincts come back into the way I build with machines.</p>
+          <div class="field-notes">
+            <span data-i18n="field.note1">Champion, Beijing University Sailing Regatta</span>
+            <span data-i18n="field.note2">Founder, Tsinghua University Sailing Association</span>
+            <span data-i18n="field.note3">38 countries explored</span>
+            <span data-i18n="field.note4">Poet, dancer, diver, pilot in training</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-band contact-band" id="contact" aria-labelledby="contact-title">
+        <div class="section-inner contact-layout segmented-contact">
+          <div>
+            <p class="section-kicker" data-i18n="contact.kicker">Contact</p>
+            <h2 id="contact-title" data-i18n="contact.title">Let us build something thoughtful.</h2>
+            <p class="cv-note"><a href="./assets/cv/Wai-Ka-Sun-CV-latest.pdf" download data-cv-link data-i18n="contact.cv">Latest CV · updated 2026-06</a></p>
+            <p class="cv-note"><a href="mailto:sunwaikalithy@gmail.com?subject=Tailored%20CV%20request" data-i18n="contact.tailored">Need a tailored CV? Email me.</a></p>
+          </div>
+          <div class="contact-cards">
+            <a href="mailto:sunwaikalithy@gmail.com?subject=Research%20collaboration%20with%20Wai%20Ka%20Sun"><span>Research</span><strong>BCI, robotics, HCI, XR, or computational neuroscience collaboration.</strong></a>
+            <a href="mailto:sunwaikalithy@gmail.com?subject=Robotics%20AI%20opportunity%20for%20Wai%20Ka%20Sun"><span>Work</span><strong>AI / robotics / embodied intelligence internships, research engineering, or applied scientist roles.</strong></a>
+            <a href="mailto:sunwaikalithy@gmail.com?subject=Venture%20conversation%20with%20Wai%20Ka%20Sun"><span>Build</span><strong>Cofounders, early believers, and people building neural interface products.</strong></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

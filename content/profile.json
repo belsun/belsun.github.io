@@ -1,0 +1,83 @@
+{
+  "name": "Wai Ka Sun",
+  "alsoKnownAs": "Bella Sun",
+  "displayName": "Wai Ka Sun / Bella Sun",
+  "location": "Hong Kong / Beijing / New York",
+  "headline": "BCI, AI, robotics, spatial intelligence",
+  "mission": "I build neural interfaces that turn human intent into physical action.",
+  "longVision": "A future where neural interfaces let people control the machines and environments around them without relying on phone screens.",
+  "bio": "Incoming Columbia MSAI Robotics Track student and Tsinghua-trained cross-disciplinary builder working across BCI, AI systems, robot learning, humanoid control, and spatial intelligence. Trained through architecture and computational design, I think in bodies, machines, and environments.",
+  "email": "sunwaikalithy@gmail.com",
+  "latestNews": [
+    {
+      "date": "2026",
+      "text": "Incoming Columbia MSAI Robotics Track student."
+    },
+    {
+      "date": "2026",
+      "text": "Mingxi Scholarship recipient, selected 4/533 by the Chief Executive of Hong Kong."
+    },
+    {
+      "date": "2024",
+      "text": "MindBridge selected as one of the first batches of disruptive innovation talent training programs at Tsinghua University."
+    }
+  ],
+  "links": {
+    "email": "mailto:sunwaikalithy@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/bella-sun-48448038b/",
+    "website": "https://waikasun.dora.run/",
+    "github": "https://github.com/belsun",
+    "instagram": "TODO_ADD_INSTAGRAM_URL",
+    "x": "TODO_ADD_X_URL",
+    "youtube": "https://www.youtube.com/@bellasun1135"
+  },
+  "cv": "./assets/cv/Wai-Ka-Sun-CV-latest.pdf",
+  "domains": [
+    "BCI",
+    "AI",
+    "Robotics",
+    "Spatial Intelligence"
+  ],
+  "institutions": [
+    {
+      "mark": "THU",
+      "label": "Tsinghua University"
+    },
+    {
+      "mark": "ARCH",
+      "label": "Tsinghua Architecture"
+    },
+    {
+      "mark": "AUTO",
+      "label": "Tsinghua Automation"
+    },
+    {
+      "mark": "IIIS",
+      "label": "Tsinghua IIIS"
+    },
+    {
+      "mark": "CU",
+      "label": "Columbia University"
+    },
+    {
+      "mark": "SEAS",
+      "label": "Columbia Engineering"
+    },
+    {
+      "mark": "LH",
+      "label": "NetEase Leihuo"
+    },
+    {
+      "mark": "AWS",
+      "label": "Developer Program"
+    },
+    {
+      "mark": "GIO",
+      "label": "Google I/O Cloud"
+    },
+    {
+      "mark": "UNICEF",
+      "label": "UNICEF"
+    }
+  ]
+}

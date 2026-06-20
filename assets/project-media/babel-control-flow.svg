@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Babel Tower Challenge sim-to-real control flow">
+  <rect width="1600" height="900" fill="#060911"/>
+  <g fill="none" stroke="#90a8ba" stroke-opacity=".22">
+    <path d="M120 680 C360 520 470 740 700 560 S1120 410 1480 550"/>
+    <path d="M160 220 H1440M160 360 H1440M160 500 H1440"/>
+  </g>
+  <text x="110" y="115" fill="#f7f2e9" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700">Babel Tower Challenge</text>
+  <text x="112" y="165" fill="#9fb7ca" font-family="Arial, Helvetica, sans-serif" font-size="24">Sim-to-real robotic control / 5-DOF stacking / DAgger</text>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <g transform="translate(120 260)">
+      <rect width="320" height="190" rx="18" fill="#111925" stroke="#415568"/>
+      <text x="28" y="58" fill="#ff6fb0" font-size="22" font-weight="700">01 SIMULATION</text>
+      <text x="28" y="104" fill="#f7f2e9" font-size="30" font-weight="700">Policy learns</text>
+      <text x="28" y="146" fill="#b5c3cf" font-size="22">friction + gravity</text>
+    </g>
+    <g transform="translate(500 260)">
+      <rect width="320" height="190" rx="18" fill="#111925" stroke="#415568"/>
+      <text x="28" y="58" fill="#ff6fb0" font-size="22" font-weight="700">02 DAGGER</text>
+      <text x="28" y="104" fill="#f7f2e9" font-size="30" font-weight="700">Expert traces</text>
+      <text x="28" y="146" fill="#b5c3cf" font-size="22">correct covariate shift</text>
+    </g>
+    <g transform="translate(880 260)">
+      <rect width="320" height="190" rx="18" fill="#111925" stroke="#415568"/>
+      <text x="28" y="58" fill="#ff6fb0" font-size="22" font-weight="700">03 ROBOT ARM</text>
+      <text x="28" y="104" fill="#f7f2e9" font-size="30" font-weight="700">5-DOF stack</text>
+      <text x="28" y="146" fill="#b5c3cf" font-size="22">physical task bridge</text>
+    </g>
+    <g transform="translate(1260 260)">
+      <rect width="220" height="190" rx="18" fill="#162130" stroke="#9cc3df"/>
+      <text x="28" y="58" fill="#b7dbf4" font-size="22" font-weight="700">RESULT</text>
+      <text x="28" y="112" fill="#f7f2e9" font-size="44" font-weight="700">3x</text>
+      <text x="28" y="152" fill="#b5c3cf" font-size="22">baseline</text>
+    </g>
+  </g>
+  <g stroke="#9cc3df" stroke-width="4" stroke-linecap="round">
+    <path d="M448 355 H492"/>
+    <path d="M828 355 H872"/>
+    <path d="M1208 355 H1252"/>
+  </g>
+</svg>

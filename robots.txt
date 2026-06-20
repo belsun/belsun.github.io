@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://waikasun.dora.run/sitemap.xml

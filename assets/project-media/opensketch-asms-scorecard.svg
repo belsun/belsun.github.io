@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="OpenSketch ASMS evaluation scorecard">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="44%" r="78%">
+      <stop offset="0" stop-color="#24162f"/>
+      <stop offset=".58" stop-color="#0b101a"/>
+      <stop offset="1" stop-color="#05070d"/>
+    </radialGradient>
+    <linearGradient id="barA" x1="0" x2="0" y1="1" y2="0">
+      <stop offset="0" stop-color="#253348"/>
+      <stop offset="1" stop-color="#9ed8d1"/>
+    </linearGradient>
+    <linearGradient id="barB" x1="0" x2="0" y1="1" y2="0">
+      <stop offset="0" stop-color="#342136"/>
+      <stop offset="1" stop-color="#ff7ab8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <text x="110" y="108" fill="#f7f2e9" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700">ASMS Evaluation</text>
+  <text x="112" y="158" fill="#b5c3cf" font-family="Arial, Helvetica, sans-serif" font-size="24">Architectural Semantic Matching Score across two multimodal bases</text>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="120" y="235" width="1360" height="540" rx="28" fill="#0d141f" stroke="#293a4d"/>
+    <g stroke="#51616f" stroke-opacity=".38" stroke-width="2">
+      <path d="M295 670 H1350"/>
+      <path d="M295 570 H1350"/>
+      <path d="M295 470 H1350"/>
+      <path d="M295 370 H1350"/>
+      <path d="M295 270 H1350"/>
+    </g>
+    <g fill="#a9bed0" font-size="20">
+      <text x="235" y="676">0</text>
+      <text x="224" y="576">25</text>
+      <text x="224" y="476">50</text>
+      <text x="224" y="376">75</text>
+      <text x="214" y="276">100</text>
+    </g>
+    <text x="305" y="722" fill="#b5c3cf" font-size="22">Baseline A</text>
+    <text x="535" y="722" fill="#b5c3cf" font-size="22">Baseline B</text>
+    <text x="760" y="722" fill="#f7f2e9" font-size="22" font-weight="700">OpenSketch + A</text>
+    <text x="1046" y="722" fill="#f7f2e9" font-size="22" font-weight="700">OpenSketch + B</text>
+    <g>
+      <rect x="330" y="646" width="86" height="24" rx="8" fill="url(#barB)"/>
+      <rect x="560" y="580" width="86" height="90" rx="8" fill="url(#barB)"/>
+      <rect x="810" y="314" width="118" height="356" rx="10" fill="url(#barA)"/>
+      <rect x="1090" y="336" width="118" height="334" rx="10" fill="url(#barA)"/>
+    </g>
+    <g font-size="30" font-weight="700">
+      <text x="345" y="626" fill="#ff9dc8">6.0</text>
+      <text x="565" y="558" fill="#ff9dc8">22.6</text>
+      <text x="836" y="292" fill="#9ee5dc">89.0</text>
+      <text x="1116" y="314" fill="#9ee5dc">83.5</text>
+    </g>
+    <g fill="none" stroke="#ffd47d" stroke-width="4" stroke-linecap="round">
+      <path d="M678 545 C725 500 752 453 786 394"/>
+      <path d="M786 394 l-4 35"/>
+      <path d="M786 394 l-31 16"/>
+    </g>
+    <rect x="1010" y="290" width="275" height="74" rx="16" fill="#121c29" stroke="#9ee5dc"/>
+    <text x="1040" y="337" fill="#f7f2e9" font-size="24" font-weight="700">professional alignment</text>
+  </g>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="OpenSketch KG-MSA system map">
+  <defs>
+    <radialGradient id="bg" cx="63%" cy="38%" r="72%">
+      <stop offset="0" stop-color="#22344c"/>
+      <stop offset=".52" stop-color="#0c111c"/>
+      <stop offset="1" stop-color="#05070d"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="0" x2="1">
+      <stop offset="0" stop-color="#111927"/>
+      <stop offset="1" stop-color="#0a101a"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#a7d9f2"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g fill="none" stroke="#8ca7bc" stroke-opacity=".18">
+    <path d="M120 190 H1480M120 350 H1480M120 510 H1480M120 670 H1480"/>
+    <path d="M270 90 V810M540 90 V810M810 90 V810M1080 90 V810M1350 90 V810"/>
+  </g>
+  <text x="110" y="104" fill="#f7f2e9" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700">OpenSketch KG-MSA</text>
+  <text x="112" y="153" fill="#a9bed0" font-family="Arial, Helvetica, sans-serif" font-size="24">Knowledge-guided multimodal semantic alignment for architectural drawings</text>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <g transform="translate(105 270)">
+      <rect width="300" height="250" rx="20" fill="url(#panel)" stroke="#527194"/>
+      <text x="30" y="54" fill="#ff6fb0" font-size="22" font-weight="700">01 INPUT</text>
+      <text x="30" y="104" fill="#f7f2e9" font-size="30" font-weight="700">Drawing image</text>
+      <text x="30" y="150" fill="#b8c6d2" font-size="22">Plans, sections, elevations</text>
+      <text x="30" y="190" fill="#b8c6d2" font-size="22">Noise cleaning and type cues</text>
+    </g>
+    <g transform="translate(485 210)">
+      <rect width="630" height="370" rx="24" fill="#101824" stroke="#78c5ba" stroke-width="3"/>
+      <text x="34" y="58" fill="#78e4cf" font-size="22" font-weight="700">02 KG-MSA CORE</text>
+      <text x="34" y="110" fill="#f7f2e9" font-size="34" font-weight="700">Professional knowledge layer</text>
+      <g fill="#141f2d" stroke="#496173">
+        <rect x="40" y="150" width="165" height="82" rx="14"/>
+        <rect x="232" y="150" width="165" height="82" rx="14"/>
+        <rect x="424" y="150" width="165" height="82" rx="14"/>
+      </g>
+      <text x="62" y="186" fill="#f7f2e9" font-size="21" font-weight="700">Drawing rules</text>
+      <text x="62" y="215" fill="#9fb2c1" font-size="18">view and scale</text>
+      <text x="254" y="186" fill="#f7f2e9" font-size="21" font-weight="700">Gestalt logic</text>
+      <text x="254" y="215" fill="#9fb2c1" font-size="18">space relations</text>
+      <text x="446" y="186" fill="#f7f2e9" font-size="21" font-weight="700">Style terms</text>
+      <text x="446" y="215" fill="#9fb2c1" font-size="18">discipline words</text>
+      <rect x="120" y="278" width="390" height="58" rx="14" fill="#1a1630" stroke="#ff6fb0" stroke-opacity=".75"/>
+      <text x="152" y="315" fill="#f7f2e9" font-size="22" font-weight="700">Dynamic patches, no model retraining</text>
+    </g>
+    <g transform="translate(1195 270)">
+      <rect width="300" height="250" rx="20" fill="url(#panel)" stroke="#c79b4b"/>
+      <text x="30" y="54" fill="#ffd47d" font-size="22" font-weight="700">03 OUTPUT</text>
+      <text x="30" y="104" fill="#f7f2e9" font-size="30" font-weight="700">Structured meaning</text>
+      <text x="30" y="150" fill="#b8c6d2" font-size="22">ARCH-Code</text>
+      <text x="30" y="190" fill="#b8c6d2" font-size="22">JSON report</text>
+      <text x="30" y="230" fill="#b8c6d2" font-size="22">Similar-case retrieval</text>
+    </g>
+  </g>
+  <g stroke="#a7d9f2" stroke-width="5" fill="none" marker-end="url(#arrow)">
+    <path d="M410 395 H475"/>
+    <path d="M1122 395 H1185"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="365" y="690" width="870" height="84" rx="18" fill="#0f1622" stroke="#2e455e"/>
+    <text x="398" y="742" fill="#b7dbf4" font-size="26" font-weight="700">Goal:</text>
+    <text x="470" y="742" fill="#f7f2e9" font-size="26">convert pixels and linework into auditable spatial semantics</text>
+  </g>
+</svg>

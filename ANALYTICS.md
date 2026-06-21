@@ -2,6 +2,14 @@
 
 The site includes a lightweight analytics client in `analytics.js`, but it is disabled by default.
 
+## Current Status
+
+You cannot see visitor details yet because no analytics endpoint is connected.
+
+The public GitHub Pages site can load the tracking client, but the client exits immediately while `window.SITE_ANALYTICS.enabled` is `false` in `index.html` and `project.html`.
+
+To view real visitors, connect one of the deployment options below, then open that provider's dashboard or database table.
+
 ## What It Can Track
 
 When enabled with an endpoint, the client sends:
@@ -20,6 +28,8 @@ The browser cannot reliably know the visitor's public IP. If IP-level analytics 
 
 Before collecting raw IP addresses, add an appropriate privacy notice and decide how long to retain logs.
 
+If you specifically need "how many people, which IPs, how long they stayed, and what they clicked", use a custom endpoint such as Cloudflare Worker + D1/KV/R2. Umami, Plausible, PostHog, or Cloudflare Web Analytics are easier to operate, but most privacy-focused dashboards intentionally avoid showing raw visitor IP addresses.
+
 ## Enable
 
 In `index.html` and `project.html`, set:
@@ -34,6 +44,8 @@ In `index.html` and `project.html`, set:
 ```
 
 The endpoint should accept `POST` requests with a JSON body.
+
+After enabling, visit the live site, click a few project links, then check the provider dashboard or backend logs. If `debug: true` is added to the config, events also print in the browser console during local testing.
 
 ## Good Deployment Options
 

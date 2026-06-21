@@ -51,7 +51,7 @@ function mediaBlock(project) {
   const embedUrl = youtubeEmbedUrl(project.videoUrl || "");
   const gallery = Array.isArray(project.gallery) ? project.gallery.filter(usableUrl) : [];
   const thumbnail = usableUrl(project.thumbnail) ? project.thumbnail : "";
-  const images = [...new Set([...(thumbnail ? [thumbnail] : []), ...gallery])].slice(0, 10);
+  const images = [...new Set([...(thumbnail ? [thumbnail] : []), ...gallery])].slice(0, 18);
   const galleryHtml = images.length
     ? `<section class="project-media project-gallery">${images.map((src, index) => `<img src="${escapeHtml(src)}" alt="${escapeHtml(project.title)} visual ${index + 1}" loading="lazy" />`).join("")}</section>`
     : "";

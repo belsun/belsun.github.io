@@ -48,7 +48,12 @@
     ],
     "thumbnail": "./assets/project-media/mindbridge-architecture-07.jpg",
     "gallery": [
+      "./assets/project-media/mindbridge-title-01.jpg",
+      "./assets/project-media/mindbridge-background-03.jpg",
+      "./assets/project-media/mindbridge-breakthrough-04.jpg",
+      "./assets/project-media/mindbridge-progress-09.jpg",
       "./assets/project-media/mindbridge-roadmap-10.jpg",
+      "./assets/project-media/mindbridge-innovation-route-11.jpg",
       "./assets/project-media/mindbridge-outcomes-13.jpg"
     ],
     "links": {
@@ -115,7 +120,12 @@
     ],
     "thumbnail": "./assets/project-media/unitree-training-10.jpg",
     "gallery": [
+      "./assets/project-media/unitree-strategy-07.jpg",
+      "./assets/project-media/unitree-policies-08.jpg",
+      "./assets/project-media/unitree-policy-network-09.jpg",
       "./assets/project-media/unitree-gait-11.jpg",
+      "./assets/project-media/unitree-robustness-12.jpg",
+      "./assets/project-media/unitree-challenges-13.jpg",
       "./assets/project-media/unitree-conclusion-14.jpg"
     ],
     "sections": {
@@ -179,7 +189,11 @@
     "gallery": [
       "./assets/project-media/opensketch-kgmsa-map.svg",
       "./assets/project-media/opensketch-asms-scorecard.svg",
-      "./assets/project-media/opensketch-archcode-stability.svg"
+      "./assets/project-media/opensketch-archcode-stability.svg",
+      "./assets/project-media/opensketch-thesis-kgmsa-16.jpg",
+      "./assets/project-media/opensketch-thesis-asms-27.jpg",
+      "./assets/project-media/opensketch-thesis-ablation-28.jpg",
+      "./assets/project-media/opensketch-thesis-stability-29.jpg"
     ],
     "links": {
       "paper": "",
@@ -312,7 +326,11 @@
     ],
     "thumbnail": "./assets/project-media/polar-overview-1.jpg",
     "gallery": [
+      "./assets/project-media/polar-eeg-nspace-2.jpg",
+      "./assets/project-media/polar-stimulus-path-3.jpg",
+      "./assets/project-media/polar-experiment-cabin-4.jpg",
       "./assets/project-media/polar-pipeline-2.jpg",
+      "./assets/project-media/polar-field-sequence-6.jpg",
       "./assets/project-media/polar-analysis-7.jpg"
     ],
     "sections": {
@@ -458,10 +476,11 @@
       "research",
       "jobs"
     ],
-  "videoUrl": "https://www.youtube.com/watch?v=Tf-_BTh-yK4",
+    "videoUrl": "https://www.youtube.com/watch?v=Tf-_BTh-yK4",
     "embedVideo": false,
-    "thumbnail": "./assets/project-media/twinspace-video-thumb.jpg",
+    "thumbnail": "./assets/project-media/twinspace-demo-thumb.jpg",
     "gallery": [
+      "./assets/project-media/twinspace-demo-thumb.jpg",
       "./assets/project-media/twinspace-video-thumb.jpg"
     ],
     "links": {

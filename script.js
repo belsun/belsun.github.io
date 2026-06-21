@@ -720,7 +720,7 @@ function projectPreviewMedia(project) {
   const sources = [project.thumbnail, ...(Array.isArray(project.gallery) ? project.gallery : [])]
     .filter(usableUrl);
 
-  return [...new Set(sources)].slice(0, 5);
+  return [...new Set(sources)].slice(0, 8);
 }
 
 function tileSizeClass(index, project = {}) {

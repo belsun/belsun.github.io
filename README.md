@@ -59,6 +59,12 @@ Then update the version and label in `content/site.json`:
 
 For public deployment, use a CV version without private phone numbers unless you intentionally want them online.
 
+## Analytics
+
+The site includes a disabled-by-default analytics client at `analytics.js`. It can report page views, dwell time, project impressions, and UI interactions after an endpoint is configured in `index.html` and `project.html`.
+
+GitHub Pages does not expose visitor IP logs to this repository. Raw IP analytics require a server-side collector or provider; see `ANALYTICS.md`.
+
 ## Deploy To GitHub Pages
 
 1. Create a GitHub repository for this folder, or copy this folder's contents into the repository you want to publish.

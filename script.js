@@ -49,6 +49,7 @@ let colorAnimationTime = 0;
 let siteContent = null;
 let profileContent = null;
 let projectContent = [];
+let projectCarouselTimers = [];
 
 let titleScene;
 let titleCamera;
@@ -715,8 +716,16 @@ function projectDetailHref(project) {
   return `./project.html?slug=${encodeURIComponent(projectSlug(project))}`;
 }
 
+function projectPreviewMedia(project) {
+  const sources = [project.thumbnail, ...(Array.isArray(project.gallery) ? project.gallery : [])]
+    .filter(usableUrl);
+
+  return [...new Set(sources)].slice(0, 5);
+}
+
 function tileSizeClass(index, project = {}) {
   const slug = projectSlug(project);
+  if (slug === "polar-mimicry-environments") return "size-spotlight";
   if (slug === "skyeye" || slug === "twinspace" || slug === "pipedream") return "size-priority";
   return ["size-wide", "size-tall", "size-medium", "size-medium", "size-small", "size-wide", "size-small", "size-medium", "size-tall"][index % 9];
 }
@@ -842,13 +851,18 @@ function renderProjectWall() {
     .map((project, index) => {
       const slug = projectSlug(project);
       const tags = projectTags(project);
-      const thumbnail = project.thumbnail || "";
-      const visual = usableUrl(thumbnail)
-        ? `<img src="${escapeHtml(thumbnail)}" alt="${escapeHtml(project.title)} project visual" loading="lazy" />`
+      const previewMedia = projectPreviewMedia(project);
+      const visual = previewMedia.length
+        ? `<span class="project-tile-carousel" aria-hidden="true">${previewMedia
+            .map(
+              (src, slideIndex) =>
+                `<img class="${slideIndex === 0 ? "is-visible" : ""}" src="${escapeHtml(src)}" alt="" loading="lazy" data-slide-index="${slideIndex}" />`,
+            )
+            .join("")}</span>`
         : `<span class="project-tile-visual" aria-hidden="true"></span>`;
 
       return `
-        <a class="project-tile ${tileSizeClass(index, project)} ${index === 0 ? "is-active" : ""}" href="${projectDetailHref(project)}" data-slug="${escapeHtml(slug)}" data-prototype="${escapeHtml(project.prototype || "brain")}">
+        <a class="project-tile ${tileSizeClass(index, project)} ${index === 0 ? "is-active" : ""}" href="${projectDetailHref(project)}" data-slug="${escapeHtml(slug)}" data-prototype="${escapeHtml(project.prototype || "brain")}" data-title="${escapeHtml(project.title)}">
           ${visual}
           <span class="project-tile-overlay">
             <span>${escapeHtml(tags.join(" / "))}</span>
@@ -858,6 +872,30 @@ function renderProjectWall() {
         </a>`;
     })
     .join("");
+
+  startProjectTileCarousels();
+}
+
+function startProjectTileCarousels() {
+  projectCarouselTimers.forEach((timer) => window.clearInterval(timer));
+  projectCarouselTimers = [];
+
+  if (prefersReducedMotion || !projectWall) return;
+
+  projectWall.querySelectorAll(".project-tile-carousel").forEach((carousel, carouselIndex) => {
+    const slides = [...carousel.querySelectorAll("img")];
+    if (slides.length < 2) return;
+
+    let activeIndex = carouselIndex % slides.length;
+    slides.forEach((slide, index) => slide.classList.toggle("is-visible", index === activeIndex));
+
+    const interval = window.setInterval(() => {
+      activeIndex = (activeIndex + 1) % slides.length;
+      slides.forEach((slide, index) => slide.classList.toggle("is-visible", index === activeIndex));
+    }, 3600 + (carouselIndex % 4) * 360);
+
+    projectCarouselTimers.push(interval);
+  });
 }
 
 function setActiveProject(slug) {

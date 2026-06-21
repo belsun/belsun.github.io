@@ -262,6 +262,11 @@
   grid-row: span 4;
 }
 
+.project-tile.size-spotlight {
+  grid-column: span 8;
+  grid-row: span 5;
+}
+
 .project-tile.size-tall {
   grid-column: span 4;
   grid-row: span 5;
@@ -278,6 +283,7 @@
 }
 
 .project-tile img,
+.project-tile-carousel,
 .project-tile-visual {
   position: absolute;
   inset: 0;
@@ -285,10 +291,24 @@
   height: 100%;
 }
 
+.project-tile-carousel {
+  display: block;
+  overflow: hidden;
+}
+
 .project-tile img {
   object-fit: cover;
+  opacity: 1;
   transform: scale(1.02);
-  transition: transform 360ms ease, filter 360ms ease;
+  transition: opacity 780ms ease, transform 360ms ease, filter 360ms ease;
+}
+
+.project-tile-carousel img {
+  opacity: 0;
+}
+
+.project-tile-carousel img.is-visible {
+  opacity: 1;
 }
 
 .project-tile-visual {
@@ -375,10 +395,13 @@
 }
 
 .project-tile:hover img,
+.project-tile:hover .project-tile-carousel img.is-visible,
 .project-tile:hover .project-tile-visual,
 .project-tile:focus-visible img,
+.project-tile:focus-visible .project-tile-carousel img.is-visible,
 .project-tile:focus-visible .project-tile-visual,
 .project-tile.is-active img,
+.project-tile.is-active .project-tile-carousel img.is-visible,
 .project-tile.is-active .project-tile-visual {
   transform: scale(1.08);
   filter: brightness(0.72) saturate(1.25);
@@ -534,6 +557,7 @@
 
   .project-tile.size-wide,
   .project-tile.size-priority,
+  .project-tile.size-spotlight,
   .project-tile.size-tall,
   .project-tile.size-medium,
   .project-tile.size-small {

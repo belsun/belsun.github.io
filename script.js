@@ -21,6 +21,7 @@ const titleCanvas = document.querySelector("#titleField");
 const titleWrap = document.querySelector("#kineticTitle");
 const sheroStage = document.querySelector(".shero-stage");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const mobileExperienceQuery = window.matchMedia("(max-width: 760px), (pointer: coarse)");
 
 let width = window.innerWidth;
 let height = window.innerHeight;
@@ -672,6 +673,10 @@ function escapeHtml(value = "") {
   return String(value).replace(/[&<>"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[char]);
 }
 
+function isMobileExperience() {
+  return mobileExperienceQuery.matches;
+}
+
 function versionedAsset(file, version) {
   if (!file) return "#";
   if (!version) return file;
@@ -906,7 +911,7 @@ function setActiveProject(slug) {
   });
 
   const project = projectContent.find((item) => projectSlug(item) === slug);
-  if (!isPrototypePinned() && project?.prototype) switchPrototypeByKey(project.prototype);
+  if (!isMobileExperience() && !isPrototypePinned() && project?.prototype) switchPrototypeByKey(project.prototype);
 }
 
 function renderProjects() {
@@ -1279,7 +1284,10 @@ function prototypeKeyFromViewport() {
 }
 
 function updateContextualPrototype() {
-  if (isPrototypePinned()) return;
+  if (isPrototypePinned() || isMobileExperience()) {
+    contextualPrototypeKey = "";
+    return;
+  }
 
   const nextKey = prototypeKeyFromViewport();
   contextualPrototypeKey = nextKey;
@@ -2177,6 +2185,8 @@ function switchPrototype(nextIndex) {
 
 function sceneState() {
   const statePrototypeKey = activePrototypeKey();
+  const mobileExperience = isMobileExperience();
+  const particleCount = bgPositions ? bgPositions.length / 3 : 0;
   const stateInteractionRadius =
     width < 700 ? (statePrototypeKey === "hand" ? 86 : 62) : width < 980 ? (statePrototypeKey === "hand" ? 104 : 75) : statePrototypeKey === "hand" ? 128 : 88;
 
@@ -2184,22 +2194,21 @@ function sceneState() {
     palette: activePalette,
     prototype: PROTOTYPES[activePrototypeIndex]?.key,
     prototypeIndex: activePrototypeIndex,
-    particleCount: bgPositions ? bgPositions.length / 3 : 0,
+    particleCount,
     particleSize: bgMaterial?.size || 0,
     particleBrightness: PARTICLE_BRIGHTNESS,
     particleDensityMultiplier:
       activePrototypeKey() === "hand" ? HAND_DENSITY_MULTIPLIER : activePrototypeKey() === "blackhole" ? BLACKHOLE_DENSITY_MULTIPLIER : 1,
     particleBlend:
       activePrototypeKey() === "hand" ? "normal-depth-scan" : activePrototypeKey() === "blackhole" ? "additive-depth-scan" : "additive-glow",
-    contextualPrototype: contextualPrototypeKey || "carousel",
+    mobileExperience,
+    contextualPrototype: mobileExperience ? "timed-carousel" : contextualPrototypeKey || "carousel",
     prototypeDuration: PROTOTYPE_DURATION,
     rotationMode: "bounded-best-angle",
     interactionShape: "screen-projection",
     interactionRadius: stateInteractionRadius,
     interactionEnabled:
-      statePrototypeKey === "hand"
-        ? (bgPositions ? bgPositions.length / 3 : 0) < HAND_INTERACTION_LIMIT
-        : (bgPositions ? bgPositions.length / 3 : 0) < 140000,
+      !mobileExperience && (statePrototypeKey === "hand" ? particleCount < HAND_INTERACTION_LIMIT : particleCount < 140000),
   };
 }
 
@@ -2569,6 +2578,7 @@ function updateTitleColors() {
 
 function updateTitleInstances(time) {
   if (!titleMesh) return;
+  const mobileExperience = isMobileExperience();
 
   titleParticles.forEach((particle, index) => {
     const driftX = Math.sin(time * 0.00032 + particle.seed) * 1.5;
@@ -2583,7 +2593,7 @@ function updateTitleInstances(time) {
     const radius = titleWidth < 520 ? 118 : 155;
     const radiusSq = radius * radius;
 
-    if (titlePointer.active && distanceSq < radiusSq) {
+    if (!mobileExperience && titlePointer.active && distanceSq < radiusSq) {
       const force = (1 - distanceSq / radiusSq) * (titleWidth < 520 ? 2.8 : 4.2);
       particle.velocity.x += (dx / Math.sqrt(distanceSq)) * force;
       particle.velocity.y += (dy / Math.sqrt(distanceSq)) * force;
@@ -2613,6 +2623,12 @@ function updateTitleInstances(time) {
 }
 
 function updatePointer(event) {
+  if (isMobileExperience() || event.pointerType === "touch" || event.pointerType === "pen") {
+    pointer.set(20, 20);
+    releaseAmbientMusic();
+    return;
+  }
+
   pointer.x = (event.clientX / width) * 2 - 1;
   pointer.y = -(event.clientY / height) * 2 + 1;
 
@@ -2638,6 +2654,8 @@ function updatePointer(event) {
 }
 
 function updateTitlePointer(event) {
+  if (isMobileExperience() || event.pointerType === "touch" || event.pointerType === "pen") return;
+
   const rect = titleWrap.getBoundingClientRect();
   titlePointer.active = true;
   titlePointer.x = event.clientX - rect.left - titleWidth / 2;
@@ -2831,6 +2849,11 @@ function releaseAmbientMusic() {
 function resize() {
   width = window.innerWidth;
   height = window.innerHeight;
+  if (isMobileExperience()) {
+    pointer.set(20, 20);
+    releaseTitlePointer();
+    contextualPrototypeKey = "";
+  }
 
   if (bgRenderer) {
     bgCamera.aspect = width / height;
@@ -2854,10 +2877,11 @@ function animate(time = 0) {
   let prototypeKey = prototype.key;
   bgMaterial.opacity = particleOpacityForPrototype(prototypeKey);
   const elapsed = Math.max(0, time - sceneStartedAt);
+  const mobileExperience = isMobileExperience();
 
   if (!prefersReducedMotion) {
     if (!isPrototypePinned()) {
-      if (contextualPrototypeKey) {
+      if (!mobileExperience && contextualPrototypeKey) {
         switchPrototypeByKey(contextualPrototypeKey);
       } else if (time - lastPrototypeSwitch > PROTOTYPE_DURATION) {
         switchPrototype(activePrototypeIndex + 1);
@@ -2872,7 +2896,7 @@ function animate(time = 0) {
     const bgCount = bgPositions.length / 3;
     const useHandPrototype = prototypeKey === "hand";
     const useBlackHolePrototype = prototypeKey === "blackhole";
-    const useScreenInteraction = bgCount < (useHandPrototype ? HAND_INTERACTION_LIMIT : 140000);
+    const useScreenInteraction = !mobileExperience && bgCount < (useHandPrototype ? HAND_INTERACTION_LIMIT : 140000);
     let matrix;
     let pointerScreenX = 0;
     let pointerScreenY = 0;
@@ -3066,8 +3090,8 @@ titleWrap?.addEventListener("pointerleave", releaseTitlePointer);
 const urlParams = new URLSearchParams(window.location.search);
 
 initializeContent();
-setLanguage(localStorage.getItem("shero-language") || navigator.language || "en");
-setPalette(urlParams.get("palette") || localStorage.getItem("shero-palette") || "blue");
+setLanguage(urlParams.get("lang") || "en");
+setPalette(urlParams.get("palette") || (isMobileExperience() ? "pink" : localStorage.getItem("shero-palette") || "blue"));
 setTone(localStorage.getItem("shero-tone") || "dark");
 updateSoundLabel();
 

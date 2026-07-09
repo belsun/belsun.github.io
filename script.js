@@ -43,7 +43,6 @@ let bgKinds;
 let marbleMaterial;
 let particleTexture;
 let activePrototypeIndex = 0;
-let contextualPrototypeKey = "";
 let lastPrototypeSwitch = 0;
 let sceneStartedAt = 0;
 let colorAnimationTime = 0;
@@ -910,8 +909,6 @@ function setActiveProject(slug) {
     element.classList.toggle("is-active", element.dataset.slug === slug);
   });
 
-  const project = projectContent.find((item) => projectSlug(item) === slug);
-  if (!isMobileExperience() && !isPrototypePinned() && project?.prototype) switchPrototypeByKey(project.prototype);
 }
 
 function renderProjects() {
@@ -935,7 +932,6 @@ async function initializeContent() {
     renderPlatformLinks();
     renderInstitutionStrip();
     renderProjects();
-    updateContextualPrototype();
   } catch (error) {
     console.warn("Content data could not be loaded", error);
   }
@@ -1186,114 +1182,13 @@ if (PINNED_PROTOTYPE_KEY) {
   window.history.replaceState({}, "", cleanUrl);
 }
 
-const SECTION_PROTOTYPE_HINTS = {
-  ai: "brain",
-  bci: "brain",
-  neuroscience: "brain",
-  computing: "brain",
-  embodied: "hand",
-  robotics: "hand",
-  humanoid: "hand",
-  spatial: "chip",
-  architecture: "chip",
-  xr: "chip",
-  iot: "chip",
-  exploration: "blackhole",
-  sailing: "blackhole",
-  space: "blackhole",
-};
-
 function prototypeIndexFromUrl() {
   const index = PROTOTYPES.findIndex((prototype) => prototype.key === PINNED_PROTOTYPE_KEY);
   return index >= 0 ? index : 0;
 }
 
 function isPrototypePinned() {
-  return PROTOTYPES.some((prototype) => prototype.key === PINNED_PROTOTYPE_KEY);
-}
-
-function prototypeIndexByKey(key) {
-  return PROTOTYPES.findIndex((prototype) => prototype.key === key);
-}
-
-function switchPrototypeByKey(key) {
-  const index = prototypeIndexByKey(key);
-  if (index < 0 || index === activePrototypeIndex) return;
-  switchPrototype(index);
-}
-
-function prototypeKeyFromContent(textContent) {
-  const text = (textContent || "").toLowerCase();
-
-  if (/robot|robotics|humanoid|unitree|embodied|sim-to-real|isaac|ros|具身|机器人|機器人|人形|机械|機械|仿真到现实|仿真到現實/.test(text)) {
-    return "hand";
-  }
-
-  if (/space station|orbital|orbit|universe|cosmic|sailing|exploration|explored|fieldwork|pilot|diver|太空|宇宙|轨道|軌道|空间站|空間站|航海|探索|飞行|飛行/.test(text)) {
-    return "blackhole";
-  }
-
-  if (/architecture|architectural|spatial|xr|digital twin|twinspace|pipedream|computational|cad|bim|schematic|iot|internet of things|chip|space computing|spatial intelligence|空间计算|空間計算|空间智能|空間智能|物联网|物聯網|芯片|晶片|建筑|建築|数字孪生|數位孿生/.test(text)) {
-    return "chip";
-  }
-
-  if (/bci|brain|eeg|neuro|neuroscience|mindbridge|llm|ai|rag|agent|motor imagery|ssvep|脑机|腦機|脑|腦|神经|神經|人工智能|大模型/.test(text)) {
-    return "brain";
-  }
-
-  return "";
-}
-
-function prototypeKeyFromViewport() {
-  const selectors = [
-    ".intro-band",
-    ".work-card",
-    ".timeline-item",
-    ".project-tile",
-    ".capability-grid article",
-    ".timeline article",
-    ".field-band",
-  ];
-  const candidates = document.querySelectorAll(selectors.join(", "));
-  const viewportHeight = window.innerHeight || height || 1;
-  const focusY = viewportHeight * 0.52;
-  let bestKey = "";
-  let bestScore = -Infinity;
-
-  candidates.forEach((element) => {
-    const rect = element.getBoundingClientRect();
-    const visibleTop = Math.max(rect.top, viewportHeight * 0.12);
-    const visibleBottom = Math.min(rect.bottom, viewportHeight * 0.9);
-    const visibleHeight = visibleBottom - visibleTop;
-    if (visibleHeight <= 0) return;
-
-    const key = element.dataset.prototype || prototypeKeyFromContent(element.textContent);
-    if (!key) return;
-
-    const centerY = rect.top + rect.height / 2;
-    const visibleRatio = Math.min(1, visibleHeight / Math.max(rect.height, 1));
-    const distancePenalty = Math.abs(centerY - focusY) / viewportHeight;
-    const score = visibleRatio - distancePenalty;
-    if (score > bestScore) {
-      bestScore = score;
-      bestKey = key;
-    }
-  });
-
-  return bestScore > -0.22 ? bestKey : "";
-}
-
-function updateContextualPrototype() {
-  if (isPrototypePinned() || isMobileExperience()) {
-    contextualPrototypeKey = "";
-    return;
-  }
-
-  const nextKey = prototypeKeyFromViewport();
-  contextualPrototypeKey = nextKey;
-  if (nextKey) {
-    switchPrototypeByKey(nextKey);
-  }
+  return false;
 }
 
 const BRAIN_POINT_COUNT = BRAIN_POINTS.length / 3;
@@ -2202,7 +2097,7 @@ function sceneState() {
     particleBlend:
       activePrototypeKey() === "hand" ? "normal-depth-scan" : activePrototypeKey() === "blackhole" ? "additive-depth-scan" : "additive-glow",
     mobileExperience,
-    contextualPrototype: mobileExperience ? "timed-carousel" : contextualPrototypeKey || "carousel",
+    contextualPrototype: "timed-carousel",
     prototypeDuration: PROTOTYPE_DURATION,
     rotationMode: "bounded-best-angle",
     interactionShape: "screen-projection",
@@ -2673,7 +2568,6 @@ function releaseTitlePointer() {
 function updateScrollDepth() {
   const maxScroll = Math.max(document.documentElement.scrollHeight - height, 1);
   scrollDepth = window.scrollY / maxScroll;
-  updateContextualPrototype();
 }
 
 function ensureAudio() {
@@ -2852,7 +2746,6 @@ function resize() {
   if (isMobileExperience()) {
     pointer.set(20, 20);
     releaseTitlePointer();
-    contextualPrototypeKey = "";
   }
 
   if (bgRenderer) {
@@ -2881,9 +2774,7 @@ function animate(time = 0) {
 
   if (!prefersReducedMotion) {
     if (!isPrototypePinned()) {
-      if (!mobileExperience && contextualPrototypeKey) {
-        switchPrototypeByKey(contextualPrototypeKey);
-      } else if (time - lastPrototypeSwitch > PROTOTYPE_DURATION) {
+      if (time - lastPrototypeSwitch > PROTOTYPE_DURATION) {
         switchPrototype(activePrototypeIndex + 1);
       }
       prototype = PROTOTYPES[activePrototypeIndex];

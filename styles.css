@@ -2016,3 +2016,196 @@ body[data-tone="light"] .hero-name span + span {
     max-width: 100%;
   }
 }
+
+/* Immersive work wall: fixed glass narrative + scrolling project media */
+.work-research-section {
+  padding-top: clamp(86px, 10vw, 150px);
+  padding-bottom: clamp(96px, 13vw, 172px);
+  overflow: clip;
+  isolation: isolate;
+}
+
+.work-research-section::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--bg) 42%, transparent), transparent 42%),
+    linear-gradient(180deg, transparent, color-mix(in srgb, var(--accent) 7%, transparent) 38%, transparent 72%);
+}
+
+.work-showcase {
+  max-width: min(1500px, calc(100vw - clamp(34px, 5vw, 76px)));
+}
+
+.work-research-section .work-research-layout {
+  display: grid;
+  grid-template-columns: minmax(294px, 0.34fr) minmax(0, 1fr);
+  gap: clamp(22px, 3.8vw, 58px);
+  align-items: start;
+}
+
+.work-sticky-panel {
+  position: sticky;
+  top: clamp(86px, 11vh, 116px);
+  display: grid;
+  gap: clamp(18px, 3vh, 30px);
+  align-content: center;
+  min-height: min(700px, calc(100svh - 140px));
+  padding: clamp(18px, 2.4vw, 28px);
+  border: 1px solid color-mix(in srgb, var(--line) 72%, transparent);
+  border-radius: 18px;
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--panel-strong) 42%, transparent), color-mix(in srgb, var(--panel) 28%, transparent)),
+    linear-gradient(90deg, color-mix(in srgb, var(--bg) 34%, transparent), transparent);
+  -webkit-backdrop-filter: blur(30px) saturate(1.55);
+  backdrop-filter: blur(30px) saturate(1.55);
+  box-shadow: 0 24px 90px color-mix(in srgb, var(--shadow) 72%, transparent);
+}
+
+.work-sticky-panel .section-heading {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 0;
+}
+
+.work-sticky-panel .section-kicker {
+  margin-bottom: 0;
+}
+
+.work-sticky-panel h2 {
+  max-width: 9ch;
+  margin-bottom: 0;
+  font-size: clamp(2.1rem, 3.5vw, 3.95rem);
+  line-height: 0.94;
+}
+
+.work-sticky-panel .research-timeline {
+  position: relative;
+  top: auto;
+  display: grid;
+  max-height: min(48svh, 460px);
+  gap: 8px;
+  overflow: auto;
+  padding-right: 2px;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+.work-sticky-panel .timeline-item {
+  min-height: 74px;
+  border-color: color-mix(in srgb, var(--line) 62%, transparent);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--bg) 18%, transparent);
+  -webkit-backdrop-filter: blur(18px) saturate(1.35);
+  backdrop-filter: blur(18px) saturate(1.35);
+}
+
+.work-sticky-panel .timeline-item:hover,
+.work-sticky-panel .timeline-item:focus-visible,
+.work-sticky-panel .timeline-item.is-active {
+  background: color-mix(in srgb, var(--panel-strong) 54%, transparent);
+}
+
+.work-media-rail {
+  min-width: 0;
+}
+
+.work-media-rail .project-wall {
+  grid-auto-rows: clamp(86px, 8.7vw, 128px);
+  gap: clamp(12px, 1.4vw, 18px);
+  align-content: start;
+}
+
+.work-media-rail .project-tile {
+  border-radius: 16px;
+  box-shadow:
+    0 18px 48px color-mix(in srgb, var(--shadow) 70%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.work-media-rail .project-tile.size-spotlight {
+  grid-row: span 5;
+}
+
+.work-media-rail .project-tile.size-priority,
+.work-media-rail .project-tile.size-tall {
+  grid-row: span 4;
+}
+
+.work-media-rail .project-tile-overlay {
+  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--bg) 58%, transparent));
+}
+
+body[data-tone="light"] .work-research-section::before {
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--bg) 58%, transparent), transparent 46%),
+    linear-gradient(180deg, transparent, color-mix(in srgb, var(--accent) 9%, transparent) 38%, transparent 72%);
+}
+
+body[data-tone="light"] .work-sticky-panel {
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--panel-strong) 58%, transparent), color-mix(in srgb, var(--panel) 36%, transparent)),
+    linear-gradient(90deg, color-mix(in srgb, var(--bg) 28%, transparent), transparent);
+}
+
+@media (max-width: 1120px) {
+  .work-research-section .work-research-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .work-sticky-panel {
+    position: relative;
+    top: auto;
+    min-height: auto;
+    align-content: start;
+  }
+
+  .work-sticky-panel h2 {
+    max-width: 760px;
+  }
+
+  .work-sticky-panel .research-timeline {
+    max-height: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: visible;
+  }
+}
+
+@media (max-width: 760px) {
+  .work-research-section {
+    padding-top: 30px;
+  }
+
+  .work-research-section::before {
+    background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--accent) 5%, transparent), transparent);
+  }
+
+  .work-showcase {
+    max-width: min(100%, calc(100vw - 28px));
+  }
+
+  .work-sticky-panel {
+    display: none;
+  }
+
+  .work-media-rail .project-wall {
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(286px, auto);
+    gap: 16px;
+  }
+
+  .work-media-rail .project-tile.size-wide,
+  .work-media-rail .project-tile.size-priority,
+  .work-media-rail .project-tile.size-spotlight,
+  .work-media-rail .project-tile.size-tall,
+  .work-media-rail .project-tile.size-medium,
+  .work-media-rail .project-tile.size-small {
+    grid-column: span 1;
+    grid-row: span 1;
+    min-height: 286px;
+  }
+}
